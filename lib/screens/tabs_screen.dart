@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/providers/news_provider.dart';
+import 'package:news_app/screens/tab1_screen.dart';
 import 'package:provider/provider.dart';
 
 class TabsScreen extends StatelessWidget {
@@ -20,6 +22,8 @@ class _Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final navigate = Provider.of<_NavigationModel>(context);
+    final newsProvider = Provider.of<NewsProvider>(context);
+
     return BottomNavigationBar(
       currentIndex: navigate.paginaActual,
       onTap: (value) => navigate.paginaActual = value,
@@ -45,7 +49,7 @@ class _Screens extends StatelessWidget {
       controller: navegacion.pageController,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        Container(color: Colors.red),
+        const Tab1Screen(),
         Container(color: Colors.green),
       ],
     );
