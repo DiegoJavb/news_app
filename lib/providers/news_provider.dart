@@ -7,7 +7,7 @@ final _APIKEY = '012f7d481e7d4f20946e23479b997798';
 
 class NewsProvider extends ChangeNotifier {
   List<Article> headlines = [];
-  NewsService() {
+  NewsProvider() {
     this.getTopHeadLines();
   }
 
